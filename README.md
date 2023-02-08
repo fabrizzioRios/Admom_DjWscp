@@ -15,3 +15,7 @@
 
 # Authors✒️
 - Luis Fabrizzio Rios Ruiz - *Backend Python* 
+- Luis Fabrizzio Rios Ruiz - *Backend Python* 
+- Luis Fabrizzio Rios Ruiz - *Backend Python* 
+- Luis Fabrizzio Rios Ruiz - *Backend Python* 
+- Luis Fabrizzio Rios Ruiz - *Backend Python* 
