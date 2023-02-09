@@ -14,8 +14,8 @@
 
 
 # Authors✒️
-- Luis Fabrizzio Rios Ruiz - *Backend Python* 
-- Luis Fabrizzio Rios Ruiz - *Backend Python* 
-- Luis Fabrizzio Rios Ruiz - *Backend Python* 
-- Luis Fabrizzio Rios Ruiz - *Backend Python* 
+- Daniel Espino Delfin - *Frontend Developer* 
+- Cesar Padilla Lazos - *Database Developer* 
+- Rogelio Cuevas Salvador - *Database Developer* 
+- Wing Manuel Ortiz - *Backend Python* 
 - Luis Fabrizzio Rios Ruiz - *Backend Python* 
