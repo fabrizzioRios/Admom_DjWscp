@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    New Test
+{% endblock %}
+
+
+{% block header %}
+    {% include "header.html" %}
+{% endblock %}
+
+{% block navbar%}
+    {% include "navbar.html" %}
+{% endblock %}
+
+{% block events %}
+    Hello
+{% endblock %}
+
+{% block tours %}
+    New
+{% endblock %}
+
+{% block explore %}
+    World
+{% endblock %}
+
+{% block script %}
+    const menuBtn = document.querySelector('.menu-btn')
+    const navlinks = document.querySelector('.nav-links')
+
+    menuBtn.addEventListener('click',()=>{
+        navlinks.classList.toggle('mobile-menu')
+    })
+{% endblock %}
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}

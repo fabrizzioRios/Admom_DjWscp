@@ -1,0 +1,23 @@
+{%load static%}
+<link rel="stylesheet" href="{% static 'css/styles.css'%}">
+<div class="headerLOG">
+    <h1>Bienvenido</h1>
+</div>
+<div class="logFORM">
+    <form class="form-signin" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <h2 class="formHeading">Iniciar sesion</h2>
+
+        <label for="username" class="sr-only">Nombre de usuario</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Nombre de usuario" required autofocus>
+        <label for="password" class="sr-only">Contraseña</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesion</button>
+        <div class="checkbox">
+            <label>
+                <a class="navbar-bttn" href="{% url 'signup' %}">Registrarse</a>
+            </label>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="{% static 'css/index_style.css'%}">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+  </head>
+  <body>
+{% if request.user.is_authenticated %}
+
+    <header>
+        {% block header %}
+
+        {% endblock %}
+    </header>
+
+    <nav class="navbar">
+        {% block navbar%}
+
+        {% endblock %}
+    </nav>
+
+    <section class="events">
+        {% block events %}
+
+        {% endblock %}
+    </section>
+    <section class="tours">
+        {% block tours %}
+
+        {% endblock %}
+    </section>
+    <section class="explore">
+        {% block explore %}
+
+        {% endblock %}
+    </section>
+
+    <script>
+        {% block script %}
+            const menuBtn = document.querySelector('.menu-btn')
+            const navlinks = document.querySelector('.nav-links')
+
+            menuBtn.addEventListener('click',()=>{
+                navlinks.classList.toggle('mobile-menu')
+            })
+        {% endblock %}
+    </script>
+
+  <section class="footer">
+    {% block footer %}
+
+    {% endblock %}
+  </section>
+
+{% else %}
+    {% include "login.html" %}
+{% endif %}
+  </body>
+</html>
