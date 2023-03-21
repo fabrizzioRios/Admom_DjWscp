@@ -2,7 +2,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
@@ -16,7 +15,7 @@
   <form method="POST" class="fReg">
     <h2 class="regHeader">Registrarse</h2>
     {% csrf_token %}
-
+    {{ form.as_p }}
     <button href="{% url 'index' %}" type="submit" class="cta">
       <span>Registrarme</span>
       <svg viewBox="0 0 13 10" height="10px" width="15px">
@@ -24,10 +23,10 @@
         <polyline points="8 1 12 5 8 9"></polyline>
       </svg>
     </button>
-      <a href="{% url 'index' %}">Home</a>
+
   </form>
-      <label>m
-          <a class="navbar-brand" href="{% url 'login' %}">Iniciar sesion</a>
+      <label>
+          <a class="navbar-brand" href="{% url 'index' %}">Iniciar sesion</a>
       </label>
 {% endblock %}
 

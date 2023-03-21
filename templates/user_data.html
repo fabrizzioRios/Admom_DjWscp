@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block header %}
+    Contact Template
+{% endblock %}
+
+{% block navbar%}
+    Navbar block
+{% endblock %}
+
+{% block events %}
+    <section class="profSUP">
+        <div class="profCARD">
+            <h1>My Profile</h1>
+            <div class="card2">
+                <div class="blob2"></div>
+                <span class="img2">
+                    <img style="width: 100px; height: 100px;" src="https://www.nicepng.com/png/full/128-1280406_view-user-icon-png-user-circle-icon-png.png" alt="icon" class="fotoICON">
+                </span>
+                <h2>{{request.user}}</span></h2>
+                <h2 class="email">{{user.email}}</h2>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block tours %}
+    Tours block
+{% endblock %}
+
+{% block explore %}
+    Explore block
+{% endblock %}
+
+{% block script %}
+    Script block
+{% endblock %}
+{% block footer %}
+{% endblock %}
