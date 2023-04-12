@@ -93,7 +93,7 @@ header{
 /*EVENTS*/
 section{
     width: 80%;
-    margin: 80px auto;
+    /* margin: 80px auto; */
 }
 .title{
     text-align: center;
@@ -186,12 +186,11 @@ p{
     padding: 0;
     margin: 30px auto;
 }
-.content-col .ctn{
+/* .content-col .ctn{
     margin-left: -100px;
-}
+} */
 
-/*FOOTER*/
-.footer{
+/* footer{
     width: 100%;
     min-height: 100px;
     padding: 20px 80px;
@@ -202,7 +201,7 @@ p{
 .footer p{
     color: whitesmoke;
     margin: 20px auto;
-}
+} */
 @media only screen and (max-width: 850px) {
     .menu-btn{
         display: block;

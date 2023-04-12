@@ -10,6 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <link rel="stylesheet" href="{% static 'css/index_style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/account_style.css'%}">
     <title>
         {% block title %}
         {% endblock %}
@@ -32,11 +33,11 @@
 
     <section class="main">
         {% block main %}
-
+        
         {% endblock %}
     </section>
 
-    <section class="events">
+    <!-- <section class="events">
         {% block events %}
 
         {% endblock %}
@@ -50,24 +51,22 @@
         {% block explore %}
 
         {% endblock %}
-    </section>
+    </section> -->
 
-    <script>
+    <!-- <script>
         {% block script %}
             const menuBtn = document.querySelector('.menu-btn')
             const navlinks = document.querySelector('.nav-links')
 
             menuBtn.addEventListener('click',()=>{
                 navlinks.classList.toggle('mobile-menu')
-            })
+            });
         {% endblock %}
-    </script>
-
-  <section class="footer">
+    </script> -->
     {% block footer %}
-
+        {% include "footer.html" %}
     {% endblock %}
-  </section>
+
 
 {% else %}
     {% include "login.html" %}

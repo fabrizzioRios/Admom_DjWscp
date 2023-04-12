@@ -1,22 +1,23 @@
 {%load static%}
-<link rel="stylesheet" href="{% static 'css/styles.css'%}">
-<div class="headerLOG">
-    <h1>Bienvenido</h1>
-</div>
-<div class="logFORM">
-    <form class="form-signin" method="post" action="{% url 'index' %}">
+<link rel="stylesheet" href="{% static 'css/login.css'%}">
+<div class="login-wrapper">
+    <form class="form" method="post" action="{% url 'index' %}">
         {% csrf_token %}
-        <h2 class="formHeading">Iniciar sesion</h2>
+        <img src="{% static 'img/avatar.png' %}" alt="">
+        <h2>Bienvenido</h2>
+        <div class="input-group">
+            <label for="username" class="sr-only"></label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Nombre de usuario" id="loginUser" required autofocus>
+        </div>
+        <div class="input-group">
+            <label for="password" class="sr-only"></label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
+        </div>
 
-        <label for="username" class="sr-only">Nombre de usuario</label>
-        <input type="text" id="username" name="username" class="form-control" placeholder="Nombre de usuario" required autofocus>
-        <label for="password" class="sr-only">Contraseña</label>
-        <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
-
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesion</button>
+        <button class="submit-btn" type="submit" class="submit-btn">Iniciar sesion</button>
         <div class="checkbox">
             <label>
-                <a class="navbar-bttn" href="{% url 'signup' %}">Registrarse</a>
+                <a class="forgot-pw" href="{% url 'signup' %}">Registrarse</a>
             </label>
         </div>
     </form>

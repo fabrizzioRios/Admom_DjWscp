@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" href="{% static 'css/signup.css'%}">
     <title>
         {% block title %}
             Inicio
@@ -23,11 +23,10 @@
         <polyline points="8 1 12 5 8 9"></polyline>
       </svg>
     </button>
-
+    <label>
+      <a class="navbar-brand" href="{% url 'index' %}">Ya tengo una cuenta</a>
+    </label>
   </form>
-      <label>
-          <a class="navbar-brand" href="{% url 'index' %}">Iniciar sesion</a>
-      </label>
 {% endblock %}
 
 {% include "footer.html" %}

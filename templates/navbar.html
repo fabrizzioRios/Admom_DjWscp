@@ -1,14 +1,35 @@
-
+{%load static%}
 <h1 class="logo">GANGELIO</h1>
+<div class="action">
+  <div class="profile" onclick="menuToggle();">
+      <img src="{%static 'img/avatar.png' %}">
+  </div>
+  <div class="menu">
+      <h3>Bienvenido {{request.user}}<br><span>a Gangelio</span></h3>
+      <ul>
+          <li><img src="{%static 'img/account_dropdown/logout.png' %}"><a href="{% url 'logout' %}">Cerrar Sesion</a></li>
+      </ul>
+  </div>
+</div>
   <ul class="nav-links">
     <li class="active"><a href="{% url 'index' %}">Home</a></li>
-    <li><a href="{% url 'explore' %}">Explore</a></li>
     <li><a href="{% url 'about' %}">About</a></li>
-      <li><a href="{% url 'place' %}">Buy a place</a></li>
+    <li><a href="{% url 'place' %}">Buy a place</a></li>
     <li><a href="{% url 'terrains' %}">Terrains to live</a></li>
     <li><a href="{% url 'houses' %}">Rent houses</a></li>
-    <li><a href="{% url 'profile' %}">My profile</a></li>
     <li><a href="{% url 'contact' %}">Contact Us</a></li>
-    <li class="ctn"><a href="{% url 'logout' %}">Logout</a></li>
   </ul>
-<img src="img/icon_menu.png" alt="" class="menu-btn">
+<img src="{% static 'img/icon_menu.png' %}" alt="" class="menu-btn">
+
+<script>
+          function menuToggle(){
+            const toggleMenu = document.querySelector('.menu');
+            toggleMenu.classList.toggle('active')
+        }
+        const menuBtn = document.querySelector('.menu-btn')
+            const navlinks = document.querySelector('.nav-links')
+
+            menuBtn.addEventListener('click',()=>{
+                navlinks.classList.toggle('mobile-menu')
+            });
+</script>

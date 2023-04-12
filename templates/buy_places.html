@@ -14,6 +14,7 @@
 {% endblock %}
 
 {% block main %}
+<link rel="stylesheet" href="{% static 'css/places_style.css'%}">
     <form class="form-signin" method="post" action="{% url 'place' %}">
         {% csrf_token %}
         <label for="min_budget" class="min_budget">Enter minimum</label>
@@ -23,17 +24,25 @@
         <input type="number" id="max_budget" name="max_budget" class="form-control" placeholder="maximum budget">
 
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Buscar</button><br>
-        {% for name in list %}
-            <a href="{{ name.link }}">
-                <img src="{% static 'img/page_1/' %}{{name.img}}" style="width: 100px; height: 100px;" class="img">
-            </a>
-            <br>
-                {{ name.name }}
-            <br>
-                ${{ name.price }}
-            <br>
-        {% endfor %}
+        <button class="cta" type="submit">Buscar</button><br>
+        <div class="container-items">
+            {% for name in list %}
+                    <div class="item">
+                        <figure>
+                            <a href="{{ name.link }}">
+                                <img
+                                src="{% static 'img/page_1/' %}{{name.img}}"
+                                alt="producto"
+                                />
+                            </a>
+                        </figure>
+                        <div class="info-product">
+                            <h2>{{ name.name }}</h2>
+                            <p class="price">${{ name.price }}</p>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>                
 
 
 {% endblock %}

@@ -1,5 +1,6 @@
 
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
 {% endblock %}
@@ -9,8 +10,8 @@
     Contact Template
 {% endblock %}
 
-{% block navbar%}
-    Navbar block
+{% block navbar %}
+    {% include "navbar.html" %}
 {% endblock %}
 
 {% block events %}
@@ -41,4 +42,5 @@
     Script block
 {% endblock %}
 {% block footer %}
+    {% include "footer.html" %}
 {% endblock %}

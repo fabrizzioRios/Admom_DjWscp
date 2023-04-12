@@ -1,0 +1,71 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background: url('../img/Fondo_login.jpg') no-repeat center;
+    color: #444444;
+  }
+  
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  a {
+    color: #337ab7;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  a:hover {
+    color: #23527c;
+  }
+  
+  /* Estilos del formulario */
+  .fReg {
+    margin: 40px auto;
+    width: 400px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+  }
+  
+  .regHeader {
+    text-align: center;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .cta {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color:  rgb(209, 109, 209);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  .cta:hover {
+    background-color:  rgb(127, 75, 127);
+  }
+  
+  /* Estilos del enlace de inicio de sesión */
+  label {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+  

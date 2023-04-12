@@ -1,32 +1,104 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="{% static 'css/about_style.css'%}">
+</head>
+<body>
+    <section class="header">
+        <a href="{% url 'index' %}" class="logo"><h2>GANGELIO</h2></a>
+        <div class="toggle"></div>
+    </section>
+    <section class="banner">
+        <img src="{%static 'img/about/banner.jpg' %}" class="fitBg">
+        <div class="content">
+            <p>Haz tus mejores momentos</p>
+            <h2>UN GRAN REGALO</h2>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </section>
 
-{% extends 'base.html' %}
+    <section class="about" id="about">
+        <div class="contentBx">
+            <h2 class="titleText">INSPIRACIÓN</h2>
+            <p class="text">El intentar conseguir un salon de fiestas para un evento especial,normalmente la persona que esta en la busqueda tiene ciertos problemas,por que quiere algo bonito,economicoo y en una buena ubicacion,asi que mi equipo y yo pensamos.
+                <br>¿Podriamos hacer algo para facilitar esta busqueda?,asi que despues de una investigacion coincidimos que agarrariamos el ejemplo de la pagina web trivago,para poder tener una busqueda mejor en los salones,terrenos o casas.
+            </p>                
+            <a href="#destination" class="btn">View More</a>
+        </div>
+        <div class="imgBx">
+            <img src="{%static 'img/about/inspiracion.jpg' %}" class="fitBg">
+        </div>
+    </section>
 
-{% block title %}
-{% endblock %}
+    <section class="banner2">
+        <img src="{%static 'img/about/banner2.jpg' %}"class="fitBg">
+    </section>
 
+    <section class="destination" id="destination">
+        <div class="conetnt">
+            <h2 class="titleText">DESARROLLADORES</h2>
+        </div>
+        <div class="destinationList">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'img/about/delfin.jpg' %}" class="fitBg">
+                </div>
+                <div class="content">
+                    <h2>DANIEL ALEJANDRO ESPINO DELFIN<br><span>Frontend Developer</span></span></h2>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'img/about/destination2.jpg' %}" class="fitBg">
+                </div>
+                <div class="content">
+                    <h2>LUIS FABRIZZIO RIOS RUIZ<br><span>Backend Python</span></span></h2>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'img/about/wing.jpg' %}" class="fitBg">
+                </div>
+                <div class="content">
+                    <h2>WING MANUEL ORTIZ<br><span>Backend Python</span></span></h2>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'img/about/destination2.jpg' %}" class="fitBg">
+                </div>
+                <div class="content">
+                    <h2>ROGELIO CUEVAS SALVADOR<br><span>Database Developer</span></span></h2>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'img/about/destination3.jpg' %}" class="fitBg">
+                </div>
+                <div class="content">
+                    <h2>CESAR PADILLA LAZOS<br><span>Database Developer</span></span></h2>
+                </div>
+            </div>
+            
+        </div>
+        <a href="#" class="btn">View More</a>
+    </section>
 
-{% block header %}
-    About Template
-{% endblock %}
-
-{% block navbar%}
-    Navbar block
-{% endblock %}
-
-{% block events %}
-    Events block
-{% endblock %}
-
-{% block tours %}
-    Tours block
-{% endblock %}
-
-{% block explore %}
-    Explore block
-{% endblock %}
-
-{% block script %}
-    Script block
-{% endblock %}
-{% block footer %}
-{% endblock %}
+    <section class="banner3">
+        <img src="{%static 'img/about/banner3.jpg' %}" class="fitBg">
+    </section>
+    <section class="footer">
+        <ul class="sci">
+            <li><a href="#"><img src="{%static 'img/about/facebook.png' %}"></a></li>
+            <li><a href="#"><img src="{%static 'img/about/twitter.png' %}"></a></li>
+            <li><a href="#"><img src="{%static 'img/about/instagram.png' %}"></a></li>
+        </ul>
+        <h4 class="copyrightText">Copyright 2022 <a href="#">Gangelio</a>. All rights reserved.</h4>
+    </section>
+</body>
+</html>

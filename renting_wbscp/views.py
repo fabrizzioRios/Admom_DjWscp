@@ -24,7 +24,7 @@ def scrap_places_view(request):
 
 
 def user_data_view(request):
-    return render(request, 'user_data.html')
+    return render(request, 'contact.html')
 
 
 def buy_a_place(request):
