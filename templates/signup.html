@@ -12,11 +12,11 @@
         {% endblock %}
     </title>
 {% block content %}
-  <form method="POST" class="fReg">
+  <form method="POST" class="fReg" action="{% url 'signup' %}">
     <h2 class="regHeader">Registrarse</h2>
     {% csrf_token %}
     {{ form.as_p }}
-    <button href="{% url 'index' %}" type="submit" class="cta">
+    <button type="submit" class="cta">
       <span>Registrarme</span>
       <svg viewBox="0 0 13 10" height="10px" width="15px">
         <path d="M1,5 L11,5"></path>
@@ -26,7 +26,6 @@
     <label>
       <a class="navbar-brand" href="{% url 'index' %}">Ya tengo una cuenta</a>
     </label>
-  </form>
 {% endblock %}
 
 {% include "footer.html" %}

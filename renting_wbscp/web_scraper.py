@@ -5,6 +5,7 @@ from lxml import html
 from async_request import main_async
 import asyncio
 
+
 def main():
     list_of_names = []
     i = 0
@@ -21,7 +22,6 @@ def main():
 
 
 def buy_place(min_budget, max_budget):
-
     i = 0
     list_places = []
     url = "https://www.flat.mx/venta/casas-en-guadalajara-zapopan"
@@ -86,7 +86,6 @@ def buy_terrain(min_budget, max_budget):
 
 
 def house_renting(min_budget, max_budget):
-
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     images = loop.run_until_complete(main_async())
@@ -98,13 +97,9 @@ def house_renting(min_budget, max_budget):
     all_houses_names = root.xpath('//div[contains(@class, "information")]//h3')
     all_houses_prices = root.xpath('//p[contains(@class, "price ")]')
     all_houses_links = root.xpath('//a[@rel="noopener noreferrer"]')
-    print(images)
-    print(all_houses_names)
 
     for index in range(len(all_houses_names)):
         if index > 0:
-            print(all_houses_names[index].text_content())
-            print(images[index])
             final_str = str()
             split_prices = all_houses_prices[index].text_content().split(' ')
             new_number = split_prices[1]
@@ -117,7 +112,7 @@ def house_renting(min_budget, max_budget):
                     'name': all_houses_names[index].text_content(),
                     'price': all_houses_prices[index].text_content(),
                     'link': f"https://www.casasyterrenos.com{all_houses_links[index + 2].get('href')}",
-                    'img': images[index]
+                    'img': images[index + 121]
                 }
                 list_of_houses.append(house_information)
     return list_of_houses
@@ -125,4 +120,3 @@ def house_renting(min_budget, max_budget):
 
 if __name__ == '__main__':
     house_renting(0, 100000000)
-

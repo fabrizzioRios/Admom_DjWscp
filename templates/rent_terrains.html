@@ -25,16 +25,9 @@
 
 
         <button class="cta" type="submit">Buscar</button><br>
+    </form>
         <div class="container-items">
-        {% for name in list %}
-            <!-- <a href="{{ name.link }}">
-                <img src="{% static 'img/page_2/' %}{{name.img}}" style="width: 100px; height: 100px;" class="img">
-            </a>
-            <br>
-                {{ name.name }}
-            <br>
-                ${{ name.price }}
-            <br> -->
+            {% for name in list %}
                 <div class="item">
                     <figure>
                         <a href="{{ name.link }}">
