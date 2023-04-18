@@ -1,5 +1,9 @@
+import time
+
 import requests
 from lxml import html
+from async_request import main_async
+import asyncio
 
 def main():
     list_of_names = []
@@ -17,6 +21,7 @@ def main():
 
 
 def buy_place(min_budget, max_budget):
+
     i = 0
     list_places = []
     url = "https://www.flat.mx/venta/casas-en-guadalajara-zapopan"
@@ -25,7 +30,7 @@ def buy_place(min_budget, max_budget):
     root = html.fromstring(url_connection.content)
     link = root.xpath(f'//*[@id="PhotoSlider"]/div/div/div[1]/div[1]/div/a/@href')
 
-    for i in range(21):
+    for i in range(15):
         if i > 0:
             name = root.xpath(f'//*[@id="properties"]/div[{i}]/a/div/div[1]/h2/text()')
             price = root.xpath(f'//*[@id="properties"]/div[{i}]/a/div/div[3]/p/span/text()')
@@ -70,7 +75,6 @@ def buy_terrain(min_budget, max_budget):
 
     for index in range(len(all_terrain_names)):
         if int(min_budget) <= int(new_price[index]) <= int(max_budget):
-
             terrain_information = {
                 'name': all_terrain_names[index],
                 'price': new_price[index],
@@ -82,33 +86,43 @@ def buy_terrain(min_budget, max_budget):
 
 
 def house_renting(min_budget, max_budget):
+
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    images = loop.run_until_complete(main_async())
+
     list_of_houses = []
     url = "https://www.casasyterrenos.com/jalisco/zapopan/terrenos/venta"
     url_connection = requests.get(url)
     root = html.fromstring(url_connection.content)
-    all_houses_names = root.xpath('//p[contains(@class, "title capitalize")]')
+    all_houses_names = root.xpath('//div[contains(@class, "information")]//h3')
     all_houses_prices = root.xpath('//p[contains(@class, "price ")]')
     all_houses_links = root.xpath('//a[@rel="noopener noreferrer"]')
+    print(images)
+    print(all_houses_names)
 
     for index in range(len(all_houses_names)):
-        final_str = str()
-        split_prices = all_houses_prices[index].text_content().split(' ')
-        new_number = split_prices[1]
-        number_concatenate = new_number.split(',')
-        for number in number_concatenate:
-            final_str = final_str + number
-        int_number = int(final_str)
-        if int(min_budget) <= int_number <= int(max_budget):
-            house_information = {
-                'name': all_houses_names[index].text_content(),
-                'price': all_houses_prices[index].text_content(),
-                'link': f"https://www.casasyterrenos.com{all_houses_links[index + 2].get('href')}",
-                'img': f'img_{index + 1}.jpg'
-            }
-            list_of_houses.append(house_information)
+        if index > 0:
+            print(all_houses_names[index].text_content())
+            print(images[index])
+            final_str = str()
+            split_prices = all_houses_prices[index].text_content().split(' ')
+            new_number = split_prices[1]
+            number_concatenate = new_number.split(',')
+            for number in number_concatenate:
+                final_str = final_str + number
+            int_number = int(final_str)
+            if int(min_budget) <= int_number <= int(max_budget):
+                house_information = {
+                    'name': all_houses_names[index].text_content(),
+                    'price': all_houses_prices[index].text_content(),
+                    'link': f"https://www.casasyterrenos.com{all_houses_links[index + 2].get('href')}",
+                    'img': images[index]
+                }
+                list_of_houses.append(house_information)
     return list_of_houses
 
 
 if __name__ == '__main__':
+    house_renting(0, 100000000)
 
-    main()
